@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>數學之塔｜學測複習解謎</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ffc94d'/%3E%3Ctext x='32' y='44' font-size='36' text-anchor='middle' font-family='serif' font-weight='bold' fill='%23241a04'%3E%E2%88%91%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="stars" aria-hidden="true"></div>
+
+  <div class="topbar">
+    <button class="brand" id="homeBtn" aria-label="回到首頁">
+      <span class="brand-mark">∑</span>
+      <span class="brand-name">數學之塔</span>
+    </button>
+    <div class="topbar-right">
+      <button id="muteBtn" class="icon-btn" aria-label="切換音效">🔊</button>
+    </div>
+  </div>
+
+  <main id="app"></main>
+
+  <footer class="footer">數學之塔 · 學測數學複習遊戲 · 共 11 章 66 題</footer>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
