@@ -175,7 +175,18 @@
     state.qs = pool.sort((a, b) => a.level - b.level);
     beginRun();
   }
+  /* 打亂選項並重新對應正確答案索引，避免正確答案集中在特定選項 */
+  function shuffledQ(q) {
+    const order = q.opts.map((_, i) => i);
+    for (let i = order.length - 1; i > 0; i--) {   // Fisher-Yates 均勻洗牌
+      const j = Math.floor(Math.random() * (i + 1));
+      [order[i], order[j]] = [order[j], order[i]];
+    }
+    return { ...q, opts: order.map(i => q.opts[i]), ans: order.indexOf(q.ans) };
+  }
+
   function beginRun() {
+    state.qs = state.qs.map(shuffledQ);
     Object.assign(state, {
       idx: 0, score: 0, hearts: 3, combo: 0, maxCombo: 0, correct: 0,
       answers: [], reviveMode: false,
